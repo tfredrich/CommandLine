@@ -47,9 +47,16 @@ public class CommandLine {
 		return (getOptionArgument(optionToken) != null);
 	}
 
+	public String getArgument(int index) {
+		return arguments.get(index);
+	}
+
 	public String[] getArguments() {
-		String[] strings = new String[arguments.size()];
-		return arguments.toArray(strings);
+		return arguments.toArray(new String[arguments.size()]);
+	}
+
+	public boolean hasArguments() {
+		return !arguments.isEmpty();
 	}
 
 	// builder class
